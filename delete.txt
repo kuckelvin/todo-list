@@ -1,0 +1,19 @@
+ADDFORM _ TODO LIST
+
+          
+          
+  const [inputs, setInputs] = React.useState({});
+
+  const handleInputChange = event => {
+    event.persist();
+    setInputs(inputs => ({
+      ...inputs,
+      [event.target.name]: event.target.value
+    }));
+  };
+
+  
+  const submitTodoItem = (e) => {
+    e.preventDefault()
+    setTodoItem(inputs)
+  }

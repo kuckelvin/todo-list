@@ -1,0 +1,138 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.toplayout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid $itembordercolor;
+  padding: 0.5rem;
+  position: relative;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  // .today {
+  //   // padding-left: 1em;
+  // }
+}
+
+.item {
+  background-color: lighten($itembgcolor, 50);
+  border-bottom: 2px solid $itembordercolor;
+  padding: 4px;
+  margin: 0;
+  position: relative;
+  max-height: 12rem;
+
+  .controls {
+    background-color: darken($itembgcolor, 1);
+  }
+
+  .itemdata {
+    padding: 0px;
+    margin: 0;
+
+    & > * {
+      margin: 4px;
+    }
+  }
+
+  .due-time {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+form {
+  min-height: 12rem;
+  padding: 2px 4px;
+
+  & label {
+    display: block;
+  }
+
+  & input {
+    width: 100%;
+    outline: none;
+    border: 0;
+    // flex: 2;
+
+    &:active {
+      border: 1px solid $itembordercolor;
+    }
+
+    &:focus {
+      border: 1px solid $itembgcolor;
+      height: 24px;
+      transition: font-size 0.5s linear;
+      font-size: 20px;
+    }
+  }
+
+  & .check {
+    display: block;
+    position: relative;
+    padding: 4px;
+    user-select: none;
+
+    & .customcheck {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      top: 16%;
+      left: 23%;
+      background-color: $itembgcolor;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      &:hover {
+        background-color: lighten($itembgcolor, 15);
+        cursor: pointer;
+      }
+    }
+
+    & input {
+      opacity: 0;
+      height: 0;
+      width: 0;
+      position: absolute;
+
+      &:checked {
+        background-color: $itembgcolor;
+      }
+
+      &:checked ~ .customcheck:after {
+        display: block;
+      }
+    }
+
+    .customcheck:after {
+      top: 16%;
+      left: 35%;
+      height: 12px;
+      width: 6px;
+      border: solid $bordercolor;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}

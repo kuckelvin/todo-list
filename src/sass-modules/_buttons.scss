@@ -1,0 +1,57 @@
+%btn {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin: 0 8px;
+  background-color: $buttonbgcolor;
+  cursor: pointer;
+  position: absolute;
+  color: $fontcolor;
+
+  :hover {
+    outline: none;
+    transform: scale(0.98);
+  }
+}
+
+.btn-add {
+  @extend %btn;
+  right: 0%;
+  font-weight: 700;
+}
+
+.btn-edit {
+  @extend %btn;
+  right: 8%;
+}
+
+.btn-delete {
+  @extend %btn;
+  right: -1%;
+  border-radius: 50%;
+  color: $itembordercolor;
+}
+
+.btn-reminder {
+  color: $itembordercolor;
+  background-color: $buttonbgcolor;
+
+  &:hover {
+    outline: none;
+  }
+}
+
+.btn-save {
+  display: block;
+  height: 2rem;
+  transition: none;
+
+  &:active {
+    border: 4px solid $itembordercolor;
+  }
+
+  &:focus {
+    border: 1px solid $itembgcolor;
+    font-size: 20px;
+  }
+}

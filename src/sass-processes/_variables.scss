@@ -1,0 +1,20 @@
+//Project color palette
+
+$ImperialRed: rgb(230, 57, 70);
+$HoneyDew-Ash: rgb(241, 250, 238);
+$PowderBlue: rgb(168, 218, 220);
+$CeladonBlue: rgb(69, 123, 157);
+$PrussianBlue: rgb(29, 53, 87);
+$greyColor: rgb(73, 80, 87);
+
+$bgcolor: $CeladonBlue;
+$bordercolor: $PrussianBlue;
+$fontcolor: $PrussianBlue;
+$itembgcolor: $greyColor;
+$buttonbgcolor: $HoneyDew-Ash;
+$itembordercolor: $ImperialRed;
+// viewport breakpoints
+
+$small: 450px;
+$medium: 760px;
+$large: 1200px;
