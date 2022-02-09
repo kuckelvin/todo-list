@@ -24,9 +24,9 @@ const Item = ( {todo, onDelete, doRemind, onEdit} ) => {
                         />
                     </div>
                     <div className="itemdata">
-                        <h3>{todo.name}</h3>
-                        <p>{todo.description}</p>
-                        <h6>{todo.due}</h6>
+                        <h3>{`NAME: ${todo.name}`}</h3>
+                        <p>{`DESCRIPTION: ${todo.description}`}</p>
+                        <h6>{`DUE DATE[YYYY-MM-DD]: ${todo.due}`}</h6>
                     </div>
                     <DueTime todo={todo}/>
                 </div>

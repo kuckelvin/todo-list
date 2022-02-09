@@ -36,6 +36,8 @@
 
 .item .controls {
   background-color: #474d54;
+  position: relative;
+  height: 1.6rem;
 }
 
 .item .itemdata {
@@ -133,14 +135,59 @@ form .check input:checked ~ .customcheck:after {
 }
 
 form .check .customcheck:after {
-  top: 16%;
-  left: 35%;
-  height: 12px;
-  width: 6px;
-  border: solid #1d3557;
-  border-width: 0 3px 3px 0;
+  top: 15%;
+  left: 32%;
+  height: 13px;
+  width: 9px;
+  border: solid green;
+  border-width: 0 4px 4px 0;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.modalWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 10;
+  padding: 6px;
+  background-color: #a8dadc;
+  pointer-events: auto;
+  width: 96%;
+}
+
+.modalClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 6px;
+  cursor: pointer;
+  color: #fafafa;
+}
+
+.modalClose:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  color: #c7c7c7;
 }
 
 .footer {
@@ -171,6 +218,41 @@ body .container {
   color: #1d3557;
 }
 
+@media (max-width: 550px) {
+  .toplayout p {
+    visibility: hidden;
+  }
+  .toplayout button {
+    position: absolute;
+    word-wrap: none;
+    right: 35%;
+    left: 35%;
+  }
+  .controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .controls .btn.btn-delete {
+    right: -1;
+  }
+  .controls .btn.btn-edit {
+    left: 50%;
+  }
+  form .check .customcheck {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16%;
+    left: 35%;
+    background-color: #495057;
+  }
+}
+
 .btn-add, .btn-edit, .btn-delete {
   display: inline-block;
   padding: 2px 6px;
@@ -195,17 +277,21 @@ body .container {
 
 .btn-edit {
   right: 8%;
+  height: 1.6rem;
 }
 
 .btn-delete {
-  right: -1%;
+  right: -0.5%;
   border-radius: 50%;
   color: #e63946;
+  height: 1.6rem;
 }
 
 .btn-reminder {
   color: #e63946;
   background-color: #f1faee;
+  position: absolute;
+  height: 1.6rem;
 }
 
 .btn-reminder:hover {
@@ -217,14 +303,9 @@ body .container {
   height: 2rem;
   -webkit-transition: none;
   transition: none;
-}
-
-.btn-save:active {
-  border: 4px solid #e63946;
-}
-
-.btn-save:focus {
-  border: 1px solid #495057;
+  color: #ffffff;
+  font-weight: 700;
   font-size: 20px;
+  background-color: #1d3557;
 }
 /*# sourceMappingURL=index.css.map */

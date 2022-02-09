@@ -23,18 +23,22 @@
 .btn-edit {
   @extend %btn;
   right: 8%;
+  height: 1.6rem;
 }
 
 .btn-delete {
   @extend %btn;
-  right: -1%;
+  right: -0.5%;
   border-radius: 50%;
   color: $itembordercolor;
+  height: 1.6rem;
 }
 
 .btn-reminder {
   color: $itembordercolor;
   background-color: $buttonbgcolor;
+  position: absolute;
+  height: 1.6rem;
 
   &:hover {
     outline: none;
@@ -45,13 +49,18 @@
   display: block;
   height: 2rem;
   transition: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: $bordercolor;
 
-  &:active {
-    border: 4px solid $itembordercolor;
-  }
+  // &:active {
+  //   border: 4px solid $itembordercolor;
+  //   font-size: 20px;
+  // }
 
-  &:focus {
-    border: 1px solid $itembgcolor;
-    font-size: 20px;
-  }
+  // &:focus {
+  //   border: 1px solid $itembgcolor;
+  //   font-size: 20px;
+  // }
 }

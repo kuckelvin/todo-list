@@ -1,5 +1,6 @@
 import "./index.css";
 import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 import TopLayout from "./react-components/TopLayout.js";
 import ItemsList from "./react-components/ItemsList.js";
 import AddForm from "./react-components/AddForm.js";
@@ -7,6 +8,7 @@ import Footer from "./react-components/Footer.js";
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  //const [showModal, setShowModal] = useState(false);
   const [editingTodoItem, setEditingTodoItem] = useState(null);
   const [defaultTodos, setDefaultTodos] = useState([
     {
@@ -61,30 +63,15 @@ function App() {
 
 
   const editForm = (id) => {
-    if (showForm === false) {
+    if (showForm !== false) {
       setShowForm(!showForm)
     } 
     let concernedTodo = defaultTodos.find((todo, index) => 
     (todo.id === id ))
     setEditingTodoItem(concernedTodo)
-    //concernedTodo.name = {editName}
-    //populateForm(concernedTodo)
     deleteItem(id)
   }
-  
-  // const toggleRemind = (id) => {
-  //   setDefaultTodos(defaultTodos.forEach(
-  //     (todo)=>((todo.id === id) && !todo.reminder)
-  //     ))
 
-  //   console.log(id)
-  // }
-
-  // const remind = (color = "") => {
-  //   setDefaultTodos(
-  //     defaultTodos.map((todo) => todo.reminder === true && (color = "green"))
-  //   );
-  // };
 
   return (
     <div className="container">
@@ -92,12 +79,10 @@ function App() {
         formShow={()=>setShowForm(!showForm)}
         text={showForm ? "HIDE FORM" : "ADD TODO ITEM"}
         btnBgColor={showForm ? "red" : "green"}
-        //populateForm={populateForm}
       />
       <ItemsList
         todos={defaultTodos}
         onDelete={deleteItem}
-        //reminder={(id)=defaultTodos()}
         doRemind={changeReminder}
         onEdit={editForm}
         dueCalculation={dueCalculation}
@@ -109,7 +94,24 @@ function App() {
         />
       ) : (
         ""
-      )}
+      )};
+      {(editingTodoItem !== null) ? (
+        <div className="modalContainer">
+        <div id="open-modal" className="modalWindow">
+          <FaTimes onClick={()=> setEditingTodoItem(null)} className="modalClose"/>
+          <AddForm
+            setTodoItem={addTodoItem}
+            todo={editingTodoItem}
+          />
+        </div>
+      </div>
+      ) : (
+        ""
+      )
+        
+      }
+      
+      
       <Footer />
     </div>
   );

@@ -10,13 +10,9 @@ const DueCalc = ( {todo} ) => {
   var str_d2 = d2.split("-")
   var str_today = today.split("-")
 
-  console.log("str_d2:", str_d2, "str_today:", str_today)
-
   //to format equally - in "day, month, year" format
   var date_d2 = new Date(str_d2[0], str_d2[1], str_d2[2])
   var date_today = new Date(str_today[2], str_today[1], str_today[0])
-  
-  console.log("date_d2:", date_d2, "date_today:", date_today)
 
   //now dates can be subtracted
   var date_diff = (date_d2 - date_today)/(1000*3600*24)

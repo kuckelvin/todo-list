@@ -39,9 +39,7 @@ const AddForm = ({setTodoItem, todo}) => {
       let id = todo.id
       const item = {id, name, description, due, reminder}
       setTodoItem(item)
-      console.log(id)
     }
-    
     
 
     setName("")
@@ -50,50 +48,51 @@ const AddForm = ({setTodoItem, todo}) => {
     setReminder(false)
     
   }
+ 
   
   return (
-      <form action="" onSubmit={submitTodoItem}>
-        <label>Item</label>
+    <form onSubmit={submitTodoItem}>
+      <label>Item</label>
+      <input 
+        type="text" 
+        placeholder="Add Item" 
+        maxLength="84" 
+        name="name"
+        value={name}
+        onChange={(e)=>setName(e.target.value)}
+      />
+      <label>Description</label>
+      <input 
+        type="text" 
+        placeholder="Describe Item" 
+        maxLength="160" 
+        name="description"
+        value={description}
+        onChange={(e)=>setDescription(e.target.value)}
+      
+      />
+      <label>Due Date</label>
+      <input 
+        type="date" 
+        placeholder="Item Due Date/Time" 
+        name="due"
+        value={due}
+        onChange={(e)=>setDue(e.target.value)}
+      
+      />
+      
+      <label className="check">Set Reminder
         <input 
-          type="text" 
-          placeholder="Add Item" 
-          maxLength="84" 
-          name="name"
-          value={name}
-          onChange={(e)=>setName(e.target.value)}
+          type="checkbox"
+          name="reminder"
+          onChange={(e)=>setReminder(e.currentTarget.checked)}
+          checked= {reminder}
         />
-        <label>Description</label>
-        <input 
-          type="text" 
-          placeholder="Describe Item" 
-          maxLength="120" 
-          name="description"
-          value={description}
-          onChange={(e)=>setDescription(e.target.value)}
-         
-        />
-        <label>Due Date</label>
-        <input 
-          type="date" 
-          placeholder="Item Due Date/Time" 
-          name="due"
-          value={due}
-          onChange={(e)=>setDue(e.target.value)}
-         
-        />
+        <span className="customcheck"></span>
+      </label>
 
-        <label className="check">Set Reminder
-          <input 
-            type="checkbox"
-            name="reminder"
-            onChange={(e)=>setReminder(e.currentTarget.checked)}
-            checked= {reminder}
-          />
-          <span className="customcheck"></span>
-        </label>
-
-        <input type="submit" value="Save To-Do Item!" className="btn btn-save"/>
-      </form>
+      <input type="submit" value="Save To-Do Item!" className="btn btn-save"/>
+    </form>
   )
 };
 

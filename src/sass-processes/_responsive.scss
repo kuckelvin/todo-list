@@ -1,0 +1,34 @@
+@media (max-width: 550px) {
+  .toplayout {
+    & p {
+      visibility: hidden;
+    }
+    & button {
+      position: absolute;
+      word-wrap: none;
+      right: 35%;
+      left: 35%;
+    }
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    & .btn.btn-delete {
+      right: -1;
+    }
+
+    & .btn.btn-edit {
+      left: 50%;
+    }
+  }
+
+  form .check .customcheck {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16%;
+    left: 35%;
+    background-color: $itembgcolor;
+  }
+}
