@@ -169,7 +169,7 @@ form .check .customcheck:after {
 
 .modalWindow {
   position: relative;
-  top: 20%;
+  top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -179,7 +179,7 @@ form .check .customcheck:after {
   padding: 6px;
   background-color: #a8dadc;
   pointer-events: auto;
-  width: 50vw;
+  width: 60vw;
   border-radius: 4px;
   opacity: 0.8;
 }

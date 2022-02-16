@@ -155,7 +155,7 @@ form {
 
 .modalWindow {
   position: relative;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.5s;
@@ -163,7 +163,7 @@ form {
   padding: 6px;
   background-color: $modalcolor;
   pointer-events: auto;
-  width: 50vw;
+  width: 60vw;
   border-radius: 4px;
   opacity: 0.8;
 }
