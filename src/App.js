@@ -78,7 +78,7 @@ function App() {
       <TopLayout
         formShow={()=>setShowForm(!showForm)}
         text={showForm ? "HIDE FORM" : "ADD TODO ITEM"}
-        btnBgColor={showForm ? "red" : "green"}
+        btnBgColor={showForm ? "rgb(230, 57, 70)" : "rgb(29, 53, 87)"}
       />
       <ItemsList
         todos={defaultTodos}

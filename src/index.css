@@ -10,8 +10,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -26,7 +27,6 @@
 }
 
 .item {
-  background-color: #cbd0d4;
   border-bottom: 2px solid #e63946;
   padding: 4px;
   margin: 0;
@@ -38,6 +38,8 @@
   background-color: #474d54;
   position: relative;
   height: 1.6rem;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .item .itemdata {
@@ -47,6 +49,10 @@
 
 .item .itemdata > * {
   margin: 4px;
+  background-color: #f1faee;
+  border-radius: 2px;
+  z-index: 2;
+  color: #2a4c7d;
 }
 
 .item .due-time {
@@ -59,6 +65,7 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  color: #43a4a8;
 }
 
 form {
@@ -151,7 +158,7 @@ form .check .customcheck:after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -161,8 +168,8 @@ form .check .customcheck:after {
 }
 
 .modalWindow {
-  position: fixed;
-  top: 50%;
+  position: relative;
+  top: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -172,7 +179,9 @@ form .check .customcheck:after {
   padding: 6px;
   background-color: #a8dadc;
   pointer-events: auto;
-  width: 96%;
+  width: 50vw;
+  border-radius: 4px;
+  opacity: 0.8;
 }
 
 .modalClose {
@@ -181,7 +190,7 @@ form .check .customcheck:after {
   right: 0;
   margin: 6px;
   cursor: pointer;
-  color: #fafafa;
+  color: #000;
 }
 
 .modalClose:hover {
@@ -206,27 +215,42 @@ form .check .customcheck:after {
 body {
   background-color: #457b9d;
   font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .container {
   padding: 0;
   margin: 0;
-  border: 1px solid #1d3557;
+  border: 2px solid #1d3557;
+  max-height: 95vh;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #cfdfea;
   color: #1d3557;
+  width: 70vw;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 550px) {
+@media (max-width: 768px) {
+  body .container {
+    max-width: 740px;
+  }
   .toplayout p {
     visibility: hidden;
   }
   .toplayout button {
     position: absolute;
-    word-wrap: none;
-    right: 35%;
-    left: 35%;
+    right: 30%;
   }
   .controls {
     display: -webkit-box;
@@ -239,16 +263,13 @@ body .container {
   .controls .btn.btn-delete {
     right: -1;
   }
-  .controls .btn.btn-edit {
-    left: 50%;
-  }
   form .check .customcheck {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     position: absolute;
     top: 16%;
-    left: 35%;
+    left: 45%;
     background-color: #495057;
   }
 }

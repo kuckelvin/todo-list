@@ -1,13 +1,15 @@
-@media (max-width: 550px) {
+@media (max-width: 768px) {
+  body .container {
+    max-width: 740px;
+  }
+
   .toplayout {
     & p {
       visibility: hidden;
     }
     & button {
       position: absolute;
-      word-wrap: none;
-      right: 35%;
-      left: 35%;
+      right: 30%;
     }
   }
   .controls {
@@ -18,7 +20,7 @@
     }
 
     & .btn.btn-edit {
-      left: 50%;
+      //left: 50%;
     }
   }
 
@@ -28,7 +30,7 @@
     border-radius: 50%;
     position: absolute;
     top: 16%;
-    left: 35%;
+    left: 45%;
     background-color: $itembgcolor;
   }
 }
